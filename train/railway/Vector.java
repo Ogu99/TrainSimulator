@@ -24,7 +24,7 @@ public interface Vector<T> {
      * 
      * @return the head.
      */
-	T head();
+    T head();
 	
     /**
      * Get the tail of this vector. For instance if the vector would be
@@ -32,12 +32,12 @@ public interface Vector<T> {
      * 
      * @return
      */
-	T tail();
+    T tail();
 
     /**
      * Get the length of this vector.
      * 
      * @return the length as int.
      */
-	int length();
+    int length();
 }

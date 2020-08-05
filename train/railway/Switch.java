@@ -79,25 +79,37 @@ public class Switch implements Vector<Point> {
 		return this.head;
 	}
 
-	@Override
-	public Point tail() {
-		return this.ends.peek();
-	}
+    @Override
+    public Point tail() {
+	    return this.ends.peek();
+    }
 
-	@Override
-	public int length() {
-	    if (this.ends.peek() != null)
-	    	return (int) sqrt(pow(head.getX() - tail().getX(), 2) +  pow(head.getY() - tail().getY(), 2));
-	    else
-	    	return -1;
+    /**
+     * {@inheritDoc}
+     * <p>
+     * <b>NOTE</b>: Length in this case means that the length of the current
+     * set part is being calculated. 
+     * For instance, if we have the switch (0,0) -> (1,0),(0,2) and the switch is set 
+     * to (1,0) then this method returns the length of (0,0) -> (1,0).
+     */
+    @Override
+    public int length() {
+        if (this.ends.peek() != null)
+	        return (int) sqrt(pow(head.getX() - tail().getX(), 2) +  pow(head.getY() - tail().getY(), 2));
+        else
+	        return -1;
 	}
 	
-	@Override
-	public String toString() {
-	    final Point[] ends = this.ends.toArray(Point[]::new);
-	    if (length() == -1) {
-	    	return Sys.join(" ", "s", this.head.toString(), "->", ends[1]) + "," + ends[2];
-	    }
-	    return Sys.join(" ", "s" , this.head.toString(), "->", ends[0]) + "," + Sys.join(" ", ends[1], length());
-	}
+    @Override
+    public String toString() {
+        final Point[] ends = this.ends.toArray(Point[]::new);
+        /* 
+         * What this does is basically when the switch is not set it won't return
+         * the length of the switch.
+         */
+        if (length() == -1) {
+            return Sys.join(" ", "s", this.head.toString(), "->", ends[1]) + "," + ends[2];
+        }
+        return Sys.join(" ", "s" , this.head.toString(), "->", ends[0]) + "," + Sys.join(" ", ends[1], length());
+    }
 }

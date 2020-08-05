@@ -28,7 +28,7 @@ public final class Sys {
      * {@link BufferedReader} to read input through the command line and also to read
      * input files.
      */
-	private static final BufferedReader IN = new BufferedReader(new InputStreamReader(System.in));
+    private static final BufferedReader IN = new BufferedReader(new InputStreamReader(System.in));
 
     /**
      * Whitespace constant.

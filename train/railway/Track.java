@@ -6,10 +6,9 @@
 package train.railway;
 
 import static java.lang.Math.sqrt;
+import static java.lang.Math.pow;
 
 import train.Sys;
-
-import static java.lang.Math.pow;
 
 /**
  * This class represents a straight track on a railway.
@@ -40,23 +39,23 @@ public class Track implements Vector<Point> {
         this.tail = tail;
     }
 
-	@Override
-	public Point head() {
-		return this.head;
-	}
+    @Override
+    public Point head() {
+	    return this.head;
+    }
 
-	@Override
-	public Point tail() {
-		return this.tail;
-	}
+    @Override
+    public Point tail() {
+	    return this.tail;
+    }
 
-	@Override
-	public int length() {
-		return (int) sqrt(pow(head.getX() - tail.getX(), 2) +  pow(head.getY() - tail.getY(), 2));
-	}
+    @Override
+    public int length() {
+	    return (int) sqrt(pow(head.getX() - tail.getX(), 2) +  pow(head.getY() - tail.getY(), 2));
+    }
 	
     @Override
     public String toString() {
-    	return Sys.join(" ", "t", this.head.toString(), "->", this.tail.toString(), length());
+        return Sys.join(" ", "t", this.head.toString(), "->", this.tail.toString(), length());
     }
 }
