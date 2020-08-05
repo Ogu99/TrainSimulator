@@ -85,10 +85,10 @@ public final class Sys {
      */
     public static String read() {
         try {
-			return IN.readLine();
-		} catch (final IOException e) {
-			throw new RuntimeException(e);
-		}
+            return IN.readLine();
+        } catch (final IOException e) {
+            throw new RuntimeException(e);
+        }
     }
     
     /**
