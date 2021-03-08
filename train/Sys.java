@@ -141,7 +141,7 @@ public final class Sys {
     
     /**
      * The Sys class also provides functionality for working with {@link java.util.regex.Pattern}.
-     * It can create pattern and match them with oder string.
+     * It can create pattern and match them with other strings.
      */
     public static final class Pattern {
     	/**
