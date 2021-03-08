@@ -1,6 +1,6 @@
 /*
  * This class is part of the "Train Simulation" application.
- * Copyright (c) 2020, Ogu99
+ * Copyright (c) 2020-2021, Ogu99
  */
 
 package train;
@@ -14,13 +14,14 @@ import java.util.StringJoiner;
 
 /**
  * Heavy Modification of an internal (and private) utility-class for input/output
- * operations provided by the "Karlsruher Institute for Technology".
+ * operations provided by the "Karlsruher Institute of Technology".
  * Credits for the original (and not published file) goes to them.
  * 
  * @author Ogu99
  * @author  ITI, VeriAlg Group
  * @author  IPD, SDQ Group
- * @version 1.1 (there Version 5.03, 2016/05/07)
+ * @version 2.0 (there Version 5.03, 2016/05/07)
+ * @since 1.0
  */
 public final class Sys {
 
@@ -107,19 +108,14 @@ public final class Sys {
     }
     
     /**
-     * Joins the given strings by the given delimeter and returns the
-     * newly created string. Every element is separated by the delimeter and
-     * at the end of the last element is no delimeter added.
-     * This method uses whitespaces as delimeter automatically.
+     * Joins the {@link String} representation of the given objects and returns them as
+     * one string.
      * 
-     * @param strings
-     * @return the joined strings
-     * 
-     * @deprecated Due to shadowing problems.
+     * @param objects - The objects to use.
+     * @return all objects combined in one string.
      */
-    @Deprecated
-    public static String join() {
-        throw new IllegalAccessError("not implemented due to problems");
+    public static String join(final Object... objects) {
+    	return join(new String(), objects);
     }
     
     /**
@@ -143,7 +139,12 @@ public final class Sys {
      * The Sys class also provides functionality for working with {@link java.util.regex.Pattern}.
      * It can create pattern and match them with other strings.
      */
-    public static final class Pattern {
+    @Deprecated
+    public static class Pattern {
+    	private Pattern() {
+    		throw new IllegalAccessError("cannot instantiate this class!");
+    	}
+    	
     	/**
     	 * Creates a new pattern.
     	 * 
